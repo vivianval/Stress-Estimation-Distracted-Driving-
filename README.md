@@ -1,5 +1,4 @@
 # Stress-Estimation-Distracted-Driving
-https://github.com/user-attachments/assets/d5d12229-b4ee-4901-81d7-94f7e72e61f7
 [![Python 3.8](https://img.shields.io/badge/python-3.8-blue.svg)](#)
 [![CUDA 11.6](https://img.shields.io/badge/CUDA-11.6-brightgreen.svg)](#)
 [![PyTorch 1.12.1](https://img.shields.io/badge/PyTorch-1.12.1-red.svg)](#)
