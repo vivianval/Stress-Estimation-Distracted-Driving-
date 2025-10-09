@@ -33,19 +33,6 @@ Script: **`visualize_emoca_flame_side_by_side.py`**.
 - **Left:** original frame with EMOCA-aligned **68-pt** + **MediaPipe** landmarks, plus a small HUD with **FLAME pose** and top-|exp|.  
 - **Right:** **Open3D** render of the **FLAME mesh** driven by the same frame’s **expr/pose**; writes a side-by-side `.avi` to `feature_visualization/`.  
 Notes: landmarks are restored to raw-pixel space via EMOCA-style crop transforms (`bbox2point`, `point2transform`, `bbpoint_warp`). If your raw video is mirrored, set `FLIP_X = True`. Adjust `IMAGE_SIZE`, `SCALE`, `BB_CENTER_SHIFT_X/Y` to match your EMOCA run.
-cd "$REPO"
-if ! grep -q "docs/demo.mp4" README.md; then
-  awk '
-    BEGIN { inserted=0 }
-    { print }
-    /^## Visualization \(side-by-side\)/ && !inserted {
-      print "";
-      print "<video src=\"docs/demo.mp4\" controls muted loop width=\"720\"></video>";
-      print "";
-      inserted=1
-    }
-  ' README.md > README.tmp && mv README.tmp README.md
-fi
 
 ## Models / assets
 Download FLAME and related weights into `assets/` (gitignored). Example path expected by scripts:
