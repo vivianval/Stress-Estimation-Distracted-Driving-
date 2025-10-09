@@ -1,3 +1,20 @@
+mkdir -p "$REPO/docs"
+ffmpeg -y -i "$VIDEO_SRC" -vf "scale=720:-2" -c:v libx264 -preset veryfast -crf 32 -pix_fmt yuv420p -movflags +faststart -an "$VIDEO_DST"
+
+
+cd "$REPO"
+if ! grep -q "docs/demo.mp4" README.md; then
+  awk '
+    BEGIN { inserted=0 }
+    { print }
+    /^## Visualization \(side-by-side\)/ && !inserted {
+      print "";
+      print "<video src=\"docs/demo.mp4\" controls muted loop width=\"720\"></video>";
+      print "";
+      inserted=1
+    }
+  ' README.md > README.tmp && mv README.tmp README.md
+fi
 # Stress-Estimation-Distracted-Driving
 
 [![Python 3.8](https://img.shields.io/badge/python-3.8-blue.svg)](#)
@@ -9,10 +26,6 @@
 
 Code for **EMOCA-based facial feature extraction** (FLAME expression/pose + robust 2D landmarks) and **side-by-side Open3D visualization** in a reproducible setup.  
 This repo stays lightweight (models and large CSVs are excluded) and focuses on the exact scripts used in our distracted-driving stress pipeline.
-
-
-mkdir -p "$REPO/docs"
-ffmpeg -y -i "$VIDEO_SRC" -vf "scale=720:-2" -c:v libx264 -preset veryfast -crf 32 -pix_fmt yuv420p -movflags +faststart -an "$VIDEO_DST"
 
 
 
