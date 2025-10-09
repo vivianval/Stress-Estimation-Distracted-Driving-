@@ -54,5 +54,4 @@ Please cite and credit:
 ## License
 MIT © 2025 Paraskevi Valergaki
 
-## Changelog
-- 2025-10-09: Initial curated release (Docker-pinned env; EMOCA demo with landmarks; side-by-side visualization; clean history).
+
