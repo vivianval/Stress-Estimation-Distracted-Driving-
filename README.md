@@ -29,6 +29,9 @@ Run **`gdl_apps/EMOCA/demos/test_emoca_on_vids_lnm.py`**.
 - `lands/T019_landmarks_xy.csv` (if enabled) → `l68_x*, l68_y*, mp_x*, mp_y*` (and optional `l68_vis*`)
 
 ## Visualization (side-by-side)
+
+<video src="docs/demo.mp4" controls muted loop width="720"></video>
+
 Script: **`visualize_emoca_flame_side_by_side.py`**.  
 - **Left:** original frame with EMOCA-aligned **68-pt** + **MediaPipe** landmarks, plus a small HUD with **FLAME pose** and top-|exp|.  
 - **Right:** **Open3D** render of the **FLAME mesh** driven by the same frame’s **expr/pose**; writes a side-by-side `.avi` to `feature_visualization/`.  
