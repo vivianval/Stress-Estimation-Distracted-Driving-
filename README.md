@@ -53,7 +53,7 @@ Please cite and credit:
 - **FLAME** 3D morphable model
 
 ## License
-MIT © 2025 Vivi Valergaki
+MIT © 2025 Paraskevi Valergaki
 
 ## Changelog
 - 2025-10-09: Initial curated release (Docker-pinned env; EMOCA demo with landmarks; side-by-side visualization; clean history).
