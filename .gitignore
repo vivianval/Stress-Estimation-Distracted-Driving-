@@ -1,0 +1,17 @@
+# Ignore downloaded models and heavy artifacts
+assets/*
+!assets/.gitkeep
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Envs
+.venv/
+venv/
+virtual/
+
+# OS
+.DS_Store
+Thumbs.db

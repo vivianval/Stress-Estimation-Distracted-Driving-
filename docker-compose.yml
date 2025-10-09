@@ -1,0 +1,62 @@
+
+
+# services:
+#   emoca:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#     image: emoca-cu116:latest
+#     container_name: emoca
+#     user: "root"
+
+#     gpus: all
+#     environment:
+#       - NVIDIA_VISIBLE_DEVICES=all
+#       - NVIDIA_DRIVER_CAPABILITIES=all
+#       # identical import path inside container
+#       - PYTHONPATH=/home/vivib/emoca/emoca
+#       # identical data/output paths inside container
+#       - DATA_ROOT=/media/storage/vivib/Structured Study Data
+#       - OUTPUT_ROOT=/home/vivib/emoca/emoca/outputs
+
+#     # LEFT == host path, RIGHT == SAME path in container
+#     volumes:
+#       - "/home/vivib/emoca/emoca:/home/vivib/emoca/emoca"
+#       - "/media/storage/vivib/Structured Study Data:/media/storage/vivib/Structured Study Data:ro"
+#       - "/home/vivib/emoca/emoca/outputs:/home/vivib/emoca/emoca/outputs"
+
+#     # land in the repo, same absolute path as host
+#     working_dir: /home/vivib/emoca/emoca
+
+#     # keep container alive so you can exec/attach
+#     command: bash -lc "tail -f /dev/null"
+
+services:
+  emoca:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: emoca-cu116:latest
+    container_name: emoca
+
+    # run as your user so files aren't root-owned
+    #user: "${UID:-1000}:${GID:-1000}"
+    user: "root"
+
+    gpus: all
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=all
+      - PYTHONPATH=/home/vivib/emoca/emoca
+      - DATA_ROOT=/media/storage/vivib/Structured Study Data
+      - OUTPUT_ROOT=/home/vivib/emoca/emoca/outputs
+      - PYTHONDONTWRITEBYTECODE=1   # avoid __pycache__ writes on bind mounts
+
+    volumes:
+      # code (+ outputs folder lives inside here)
+      - "/home/vivib/emoca/emoca:/home/vivib/emoca/emoca:rw"
+      # dataset read-only (safe for long runs)
+      - "/media/storage/vivib/Structured Study Data:/media/storage/vivib/Structured Study Data:ro"
+
+    working_dir: /home/vivib/emoca/emoca
+    command: bash -lc "tail -f /dev/null"
