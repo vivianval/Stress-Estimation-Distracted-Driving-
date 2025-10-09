@@ -15,3 +15,5 @@ virtual/
 # OS
 .DS_Store
 Thumbs.db
+
+emoca_results/CSV_stream/lands/
