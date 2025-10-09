@@ -17,3 +17,6 @@ virtual/
 Thumbs.db
 
 emoca_results/CSV_stream/lands/
+
+emoca_results/**.csv
+emoca_results/**/lands/
