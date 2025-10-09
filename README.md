@@ -9,14 +9,22 @@
 Code for **EMOCA-based facial feature extraction** (FLAME expression/pose + robust 2D landmarks) and **side-by-side Open3D visualization** in a reproducible setup.  
 This repo stays lightweight (models and large CSVs are excluded) and focuses on the exact scripts used in our distracted-driving stress pipeline.
 
+## Clone Emoca_v2
 
+```bash
+git clone --branch release/EMOCA_v2 --depth 1 https://github.com/radekd91/emoca.git
+```
 
 ## Environment (Docker summary)
 A reproducible image pins **CUDA 11.6 + cuDNN 8, Python 3.8, PyTorch 1.12.1 (cu116), PyTorch3D 0.6.2, mmcv-full 1.5.0**, ensuring PyTorch ↔ PyTorch3D binary compatibility and stable builds.  
 Docker Compose bind-mounts your local **EMOCA_v2** checkout and dataset so extraction and visualization run identically across NVIDIA GPU hosts.
+```bash
+docker compose build
+docker compose up 
+```
 
 ## Feature Extraction (EMOCA + landmarks)
-Run **`gdl_apps/EMOCA/demos/test_emoca_on_vids_lnm.py`**.  
+Run **`gdl_apps/EMOCA/demos/test_emoca_on_vids_lnm.py`**. (instead of test_emoca_on_videos.py) 
 **What it does (additions):**
 - **Memory-efficient per-subject CSVs** for FLAME **expression (50)** and **pose (6)**.
 - **Landmarks saving:** 68×2 (x,y) in **unit-center crop space** + **105×2** MediaPipe subset; optional 68-pt visibility.
@@ -37,9 +45,12 @@ Script: **`visualize_emoca_flame_side_by_side.py`**.
 Notes: landmarks are restored to raw-pixel space via EMOCA-style crop transforms (`bbox2point`, `point2transform`, `bbpoint_warp`). If your raw video is mirrored, set `FLIP_X = True`. Adjust `IMAGE_SIZE`, `SCALE`, `BB_CENTER_SHIFT_X/Y` to match your EMOCA run.
 
 ## Models / assets
-Download FLAME and related weights into `assets/` (gitignored). Example path expected by scripts:
-assets/FLAME/geometry/generic_model.pkl
-You may symlink or set env vars if models live elsewhere.
+Download FLAME and related weights into `assets/` 
+```bash
+bash emoca/gdl_apps/EMOCA/demos/download_assets.sh
+```
+
+
 
 ## Tips 
 - If a video won’t play, re-encode to H.264/yuv420p (see `convert_to_mp4.sh`).  
