@@ -31,7 +31,7 @@ Run **`gdl_apps/EMOCA/demos/test_emoca_on_vids_lnm.py`**.
 ## Visualization (side-by-side)
 
 <video src="docs/demo.mp4" controls muted loop width="720"></video>
-
+https://github.com/user-attachments/assets/d5d12229-b4ee-4901-81d7-94f7e72e61f7
 Script: **`visualize_emoca_flame_side_by_side.py`**.  
 - **Left:** original frame with EMOCA-aligned **68-pt** + **MediaPipe** landmarks, plus a small HUD with **FLAME pose** and top-|exp|.  
 - **Right:** **Open3D** render of the **FLAME mesh** driven by the same frame’s **expr/pose**; writes a side-by-side `.avi` to `feature_visualization/`.  
