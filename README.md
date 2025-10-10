@@ -17,7 +17,9 @@ git clone --branch release/EMOCA_v2 --depth 1 https://github.com/radekd91/emoca.
 
 ## Environment (Docker summary)
 A reproducible image pins **CUDA 11.6 + cuDNN 8, Python 3.8, PyTorch 1.12.1 (cu116), PyTorch3D 0.6.2, mmcv-full 1.5.0**, ensuring PyTorch ↔ PyTorch3D binary compatibility and stable builds.  
-Docker Compose bind-mounts your local **EMOCA_v2** checkout and dataset so extraction and visualization run identically across NVIDIA GPU hosts.
+Docker Compose bind-mounts your local **EMOCA_v2** checkout and dataset so extraction and visualization run identically across NVIDIA GPU hosts. 
+
+If 2D alignment gives an error inside the container just pip install the ONLY CORRECT VERSION for our implementation for face-alignment which is 1.3.4 
 ```bash
 docker compose build
 docker compose up 
