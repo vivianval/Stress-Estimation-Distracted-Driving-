@@ -64,11 +64,13 @@ Please cite and credit:
 - **EMOCA v2** (feature extraction pipeline)  
 - **FLAME** 3D morphable model
 
-## License
-MIT © 2025 Paraskevi Valergaki
-
 
 
 ## Dataset
 The per-frame dataset (biosignals, labels, and features) can be downloaded here:  
 https://drive.google.com/drive/folders/1DCPmM9ciGFMPBJKUo_8pqaZbnCpvaIiv?usp=drive_link
+Each subject includes synchronized biosignals, per-frame stressful events (ground truth labels), and EMOCA-extracted features.
+
+## License
+MIT © 2025 Paraskevi Valergaki
+
