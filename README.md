@@ -68,3 +68,7 @@ Please cite and credit:
 MIT © 2025 Paraskevi Valergaki
 
 
+
+## Dataset
+The per-frame dataset (biosignals, labels, and features) can be downloaded here:  
+https://drive.google.com/drive/folders/1DCPmM9ciGFMPBJKUo_8pqaZbnCpvaIiv?usp=drive_link
