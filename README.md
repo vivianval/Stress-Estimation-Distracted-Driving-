@@ -6,7 +6,7 @@
 [![Docker](https://img.shields.io/badge/Docker-ready-2496ED.svg)](#)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#license)
 
-Code for **EMOCA-based facial feature extraction** (FLAME expression/pose + robust 2D landmarks) and **side-by-side Open3D visualization** in a reproducible setup.  
+Code for **EMOCA-based facial feature extraction** (FLAME expression/pose + robust 2D landmarks), **side-by-side Open3D visualization** in a reproducible setup, dataset creation and cross-modal transformer training.   
 This repo stays lightweight (models and large CSVs are excluded) and focuses on the exact scripts used in our distracted-driving stress pipeline.
 
 ## Clone Emoca_v2
@@ -59,17 +59,24 @@ bash emoca/gdl_apps/EMOCA/demos/download_assets.sh
 - EMOCA pose ordering is `[global(3), jaw(3)]`; the renderer maps jaw to `pose[6:9]` and exposes a gain for visibility.  
 
 
-## Acknowledgements
-Please cite and credit:
-- **EMOCA v2** (feature extraction pipeline)  
-- **FLAME** 3D morphable model
-
 
 
 ## Dataset
 The per-frame dataset (biosignals, labels, and features) can be downloaded here:  
 https://drive.google.com/drive/folders/1DCPmM9ciGFMPBJKUo_8pqaZbnCpvaIiv?usp=drive_link
-Each subject includes synchronized biosignals, per-frame stressful events (ground truth labels), and EMOCA-extracted features.
+
+Each subject includes synchronized biosignals, per-frame stressful events (ground truth labels), and EMOCA-extracted features. In the same directory you can find the enriched dataset with gaze dynamics. 
+
+## Cross-Modal Transformer Feature Fusion 
+This command trains and evaluates a cross-modal transformer on synchronized FLAME (facial expression/pose) + biosignals/gaze time series, using time-based windows and subject-wise splits.
+```bash
+python training/cmt.py    --csv "/home/vivib/emoca/emoca/dataset/all_subjects_merged.csv"    --outdir training/runs/cmt_time_v1      --win_sec 12 --stride_sec 3 --target_hz 30    --train_ratio 0.80 --val_ratio 0.10    --embed_dim 128 --layers 2 --heads 4 --dropout 0.1    --batch 32 --epochs 30 --lr 3e-4 --weight_decay 1e-2    --balance fifty_fifty --label_thresh 0.30
+```
+
+## Acknowledgements
+Please cite and credit:
+- **EMOCA v2** (feature extraction pipeline)  
+- **FLAME** 3D morphable model
 
 ## License
 MIT © 2025 Paraskevi Valergaki
