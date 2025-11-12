@@ -1,0 +1,16 @@
+modality,phase,n_subjects
+Breathing.Rate,P1,52
+Breathing.Rate,P2,52
+Breathing.Rate,P3,52
+Breathing.Rate,P4,52
+Breathing.Rate,P5,50
+Heart.Rate,P1,51
+Heart.Rate,P2,50
+Heart.Rate,P3,50
+Heart.Rate,P4,50
+Heart.Rate,P5,48
+Perinasal.Perspiration,P1,51
+Perinasal.Perspiration,P2,52
+Perinasal.Perspiration,P3,52
+Perinasal.Perspiration,P4,52
+Perinasal.Perspiration,P5,51

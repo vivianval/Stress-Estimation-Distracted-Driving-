@@ -1,0 +1,6 @@
+Perinasal.Perspiration: P2 vs P1: n=51  t=1.351  p=0.1827  ns
+Perinasal.Perspiration: P4 vs P3: n=52  t=5.373  p=1.934e-06  ***
+Heart.Rate: P2 vs P1: n=50  t=2.008  p=0.05015  ns
+Heart.Rate: P4 vs P3: n=50  t=3.132  p=0.002925  **
+Breathing.Rate: P2 vs P1: n=52  t=3.449  p=0.001138  **
+Breathing.Rate: P4 vs P3: n=52  t=-0.081  p=0.9359  ns

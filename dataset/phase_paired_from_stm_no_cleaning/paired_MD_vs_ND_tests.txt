@@ -1,0 +1,18 @@
+=== Perinasal.Perspiration ===
+P1: n=51  t=-0.177  p=0.86  p_adj=1  ns
+P2: n=54  t=0.025  p=0.9805  p_adj=1  ns
+P3: n=54  t=-0.853  p=0.3973  p_adj=1  ns
+P4: n=54  t=0.958  p=0.3427  p_adj=1  ns
+P5: n=52  t=0.446  p=0.6577  p_adj=1  ns
+=== Heart.Rate ===
+P1: n=56  t=-0.610  p=0.5442  p_adj=1  ns
+P2: n=55  t=1.154  p=0.2536  p_adj=1  ns
+P3: n=55  t=-0.381  p=0.7045  p_adj=1  ns
+P4: n=54  t=-0.294  p=0.7701  p_adj=1  ns
+P5: n=52  t=-0.197  p=0.8445  p_adj=1  ns
+=== Breathing.Rate ===
+P1: n=59  t=0.897  p=0.3737  p_adj=1  ns
+P2: n=59  t=0.191  p=0.8493  p_adj=1  ns
+P3: n=59  t=-0.200  p=0.842  p_adj=1  ns
+P4: n=59  t=-0.904  p=0.3697  p_adj=1  ns
+P5: n=57  t=0.417  p=0.6779  p_adj=1  ns
