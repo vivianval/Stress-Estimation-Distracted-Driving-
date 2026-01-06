@@ -62,15 +62,12 @@ bash emoca/gdl_apps/EMOCA/demos/download_assets.sh
 
 
 ## Dataset
-The per-frame dataset (biosignals, labels, and features) can be downloaded here:  
-https://drive.google.com/drive/folders/1DCPmM9ciGFMPBJKUo_8pqaZbnCpvaIiv?usp=drive_link
-
-Each subject includes synchronized biosignals, per-frame stressful events (ground truth labels), and EMOCA-extracted features. In the same directory you can find the enriched dataset with gaze dynamics. 
+Folder dataset contains the files for LDA, tSNE, paired t-tests and the plots comparing the lightweight temporal preprocessing. 
 
 ## Cross-Modal Transformer Feature Fusion 
 This command trains and evaluates a cross-modal transformer on synchronized FLAME (facial expression/pose) + biosignals/gaze time series, using time-based windows and subject-wise splits.
 ```bash
-python training/cmt.py    --csv "/home/vivib/emoca/emoca/dataset/all_subjects_merged.csv"    --outdir training/runs/cmt_time_v1      --win_sec 12 --stride_sec 3 --target_hz 30    --train_ratio 0.80 --val_ratio 0.10    --embed_dim 128 --layers 2 --heads 4 --dropout 0.1    --batch 32 --epochs 30 --lr 3e-4 --weight_decay 1e-2    --balance fifty_fifty --label_thresh 0.30
+python ./training/comparisons/cross_modal_attentionv2.py --emoca_mode "all" --bio_mode "all" --norm none --subject_norm per_split
 ```
 
 ## Acknowledgements
