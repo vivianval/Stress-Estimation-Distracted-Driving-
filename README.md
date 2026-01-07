@@ -1,4 +1,4 @@
-# Stress-Estimation-Distracted-Driving
+# Combining facial videos and biosignals for stress estimation during driving
 [![Python 3.8](https://img.shields.io/badge/python-3.8-blue.svg)](#)
 [![CUDA 11.6](https://img.shields.io/badge/CUDA-11.6-brightgreen.svg)](#)
 [![PyTorch 1.12.1](https://img.shields.io/badge/PyTorch-1.12.1-red.svg)](#)
@@ -6,6 +6,7 @@
 [![Docker](https://img.shields.io/badge/Docker-ready-2496ED.svg)](#)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#license)
 
+Official Code Repo for our work Combining facial videos and biosignals for stress estimation during driving submitted to ICPR 2026
 Code for **EMOCA-based facial feature extraction** (FLAME expression/pose + robust 2D landmarks), **side-by-side Open3D visualization** in a reproducible setup, dataset creation and cross-modal transformer training.   
 This repo stays lightweight (models and large CSVs are excluded) and focuses on the exact scripts used in our distracted-driving stress pipeline.
 
