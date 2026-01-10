@@ -64,7 +64,7 @@ bash emoca/gdl_apps/EMOCA/demos/download_assets.sh
 
 
 ## Dataset
- The videos we used are publicly available at Sci. Data 4:170110 doi: 10.1038/sdata.2017.110 (2017). Folder dataset contains the files for LDA, tSNE, paired t-tests and the plots comparing the lightweight temporal preprocessing. It also contains info on labeling and creating the dataset, windows and 1st order normalization based on ND facial features.  
+ The videos we used are publicly available at Sci. Data 4:170110 doi: 10.1038/sdata.2017.110 (2017). Folder /dataset contains the files for LDA, tSNE, paired t-tests and the plots comparing the lightweight temporal preprocessing. It also contains info on labeling and preprocessing the dataset consisting of 3D facial features that we extracted from the infrared facial videos. Windowing info and 1st order normalization based on ND facial features are also contained.   
 
 ## Cross-Modal Transformer Feature Fusion 
 This command trains and evaluates a cross-modal transformer on synchronized FLAME (facial expression/pose) + biosignals/gaze time series, using time-based windows and subject-wise splits.
