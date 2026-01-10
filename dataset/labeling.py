@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3    ################################# LABELING IS PERFORMED WITH FFPROBE AS FPS IS NOT STABLE ###
 import argparse, json, shlex, subprocess, re
 from pathlib import Path
 from typing import Optional, List, Tuple

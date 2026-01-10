@@ -188,7 +188,7 @@ def compute_metrics(y_true: np.ndarray, logits: np.ndarray, thr: float = 0.5) ->
 #       A_frame, B_frame selected from frame_feature_names
 #       A_vel,   B_vel   selected from vel_feature_names
 
-#     Keeps your same modes:
+#     
 #       emoca_mode controls A (visual) selection
 #       bio_mode controls B (biosignal) selection
 #     """
@@ -350,7 +350,7 @@ def select_indices_frame_vel(
         return sorted([names.index(w) for w in want])
 
     # -----------------
-    # BIO selection (same as yours)
+    # BIO selection : experimenting with each modality at a time or all at once --bio mode
     # -----------------
     bio_base = ["Perinasal.Perspiration", "Breathing.Rate", "Heart.Rate"]
     bio_vel  = [
@@ -1327,7 +1327,7 @@ def main():
 
                 # --- normalization ---
         if args.subject_norm == "none":
-            # your existing global train-only normalization
+            # existing global train-only normalization
             norm = FrameVelNormalizer(args.norm)
             norm.fit(X_frame[tr_idx], X_vel[tr_idx])
 

@@ -133,8 +133,8 @@ miss_df.to_csv(OUT_MISSINGCSV, index=False)
 # ---- Save per-subject gaze dynamics + stress ratio
 gaze_df = pd.DataFrame(stats_rows)
 gaze_df.to_csv(OUT_STATS, index=False)
-print(f"✅ Saved gaze dynamics stats → {OUT_STATS}")
-print(f"✅ Saved missing-biosignals report → {OUT_MISSINGCSV}")
+print(f"Saved gaze dynamics stats → {OUT_STATS}")
+print(f"Saved missing-biosignals report → {OUT_MISSINGCSV}")
 
 # ---- Correlations (subject-level features vs stress ratio computed above)
 if not gaze_df.empty and "StressRatio" in gaze_df.columns:
@@ -151,7 +151,7 @@ if not gaze_df.empty and "StressRatio" in gaze_df.columns:
 
     corr_df = pd.DataFrame(corr_rows).sort_values("Pearson", ascending=False)
     corr_df.to_csv(OUT_CORR, index=False)
-    print(f"✅ Saved correlation results → {OUT_CORR}")
+    print(f"Saved correlation results → {OUT_CORR}")
 
     # Heatmap saved only (no display)
     if not corr_df.empty:
@@ -165,11 +165,11 @@ if not gaze_df.empty and "StressRatio" in gaze_df.columns:
         plt.tight_layout()
         plt.savefig(OUT_HEATMAP, dpi=200)
         plt.close()
-        print(f"✅ Saved heatmap → {OUT_HEATMAP}")
+        print(f"Saved heatmap → {OUT_HEATMAP}")
     else:
-        print("⚠️ No valid correlation rows to plot.")
+        print("No valid correlation rows to plot.")
 else:
-    print("⚠️ No StressRatio available to compute correlations.")
+    print("No StressRatio available to compute correlations.")
 
 
 #!/usr/bin/env python3

@@ -58,6 +58,8 @@ import pandas as pd
 from pathlib import Path
 import matplotlib.pyplot as plt
 
+import matplotlib.patheffects as pe
+
 # -----------------------------
 # PATHS
 # -----------------------------
@@ -142,9 +144,6 @@ phase    = df_clean["phase"].astype(str).to_numpy() if "phase" in df_clean.colum
 #     print("No 'phase' column in CSV → skipping phase plot.")
 
 
-import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib.patheffects as pe
 
 # Z:      (N, 2) t-SNE coordinates
 # subjects: array of subject IDs as strings
